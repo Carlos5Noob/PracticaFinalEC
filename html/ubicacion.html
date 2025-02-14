@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        h3:nth-last-child(n+3) {
+            text-decoration: underline 1.5px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-danger text-white text-center p-4">
+        <h1>Autos Locos</h1>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link text-white" href="home.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="about.html">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="ubicacion.html">Ubicación</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        <h2 class="text-center">Nuestra Ubicación</h2>
+        <p class="text-center">Nos encontramos en el corazón de la ciudad, con fácil acceso y estacionamiento gratuito.
+        </p>
+
+        <section class="row">
+            <div class="col-md-6">
+                <h3>Dirección:</h3>
+                <p>Calle Ficticia 123, Centro, Ciudad Ejemplo, Estado, 12345</p>
+                <p>Teléfono: 555-1234</p>
+                <p>Horario: Lunes a Viernes, 9:00 AM - 6:00 PM</p>
+            </div>
+            <div class="col-md-6">
+                <h3>¿Cómo Llegar?</h3>
+                <p>Estamos ubicados a solo 5 minutos de la Plaza Principal. Si vienes en transporte público, varias
+                    rutas de autobús tienen paradas cerca de nuestra dirección.</p>
+                <p>Si prefieres venir en tu vehículo, contamos con estacionamiento gratuito para nuestros clientes.</p>
+            </div>
+        </section>
+
+        <section class="row mt-4">
+            <div class="col-12">
+                <h3>Mapa de Ubicación</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.0227784040334!2d-99.1349399!3d19.4326087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6b7c8ff0a3%3A0x8712b2ec09796a51!2sCalle%20Ficticia%20123!5e0!3m2!1ses!2smx!4v1646705480285!5m2!1ses!2smx"
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <p>&copy; 2025 Autos Locos. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("¡Bienvenido a la página de Ubicación de Autos Locos!");
+        });
+
+        $("a").on('click', function (event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+                    window.location.hash = hash;
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

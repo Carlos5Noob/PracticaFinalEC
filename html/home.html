@@ -1,12 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Página principal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autos Locos - Inicio</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+        .h3 :hover{
+            text-decoration: underline;
+        }
+    </style>
 </head>
+
 <body>
+    <header class="bg-danger text-white text-center p-4">
+        <h1>Autos Locos</h1>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link text-white" href="home.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="about.html">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="ubicacion.html">Ubicación</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="container mt-4">
+        <h2 class="text-center">Bienvenidos a Autos Locos</h2>
+        <p class="text-center">Tu concesionario de confianza con las mejores ofertas y servicios.</p>
+        
+        <section class="row">
+            <article class="article col-md-6" data-url="ubicacion.html">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Ubicación</h3>
+                        <p class="card-text">Nos encontramos en el centro de la ciudad con fácil acceso y estacionamiento gratuito.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="article col-md-6" data-url="consecionario.html">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Ofertas Especiales</h3>
+                        <p class="card-text">Descubre descuentos exclusivos y promociones por tiempo limitado.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+        
+        <section class="row mt-4">
+            <article class="article col-md-6" data-url="atencion.html">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Atención al Cliente</h3>
+                        <p class="card-text">Nuestro equipo está disponible 24/7 para ayudarte con cualquier consulta o asistencia.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="article col-md-6" data-url="equipo.html">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Nuestro Equipo</h3>
+                        <p class="card-text">Contamos con profesionales amantes de los vehículos, listos para brindarte la mejor experiencia en tu compra.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+    
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <p>&copy; 2025 Autos Locos. Todos los derechos reservados.</p>
+    </footer>
 
-    <h1>Concesionario Autos Locos</h1>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("Página cargada correctamente");
+            
+            let articles = document.querySelectorAll(".article");
+            articles.forEach(article => {
+                article.addEventListener("click", function() {
+                    let url = this.getAttribute("data-url");
+                    if (url) {
+                        window.location.href = url;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>
