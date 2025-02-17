@@ -58,11 +58,12 @@
         <input type="text" id="usuario" placeholder="Usuario">
         <input type="password" id="contrasena" placeholder="Contraseña">
         <p class="error" id="error-msj">Usuario o contraseña incorrectos</p>
-        <button onclick="login()">Ingresar</button>
+        <button id="login-btn" onclick="login()">Ingresar</button>
         <img src="../resources/home(1).png" alt="home" width="40" height="40" onclick="VueltaAHome()">
     </div>
 
     <script>
+
         function login() {
             const username = document.getElementById("usuario").value;
             const password = document.getElementById("contrasena").value;
@@ -78,6 +79,12 @@
         function VueltaAHome() {
             window.location.href = "home.html";
         }
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                document.getElementById("login-btn").click();
+            }
+        });
     </script>
 </body>
 </html>
