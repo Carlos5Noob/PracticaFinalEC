@@ -38,6 +38,9 @@
                 <li class="nav-item"><a class="nav-link text-white" href="home.html">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="about.html">Sobre Nosotros</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="ubicacion.html">Ubicación</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="equipo.html">Equipo</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="consecionario.html">Catálogo</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="contacto.html">Atención al cliente</a></li>
             </ul>
         </nav>
     </header>
@@ -104,6 +107,33 @@
             });
         });
     </script>
+
+    <script>
+        const articles = document.querySelectorAll('.article');
+
+        function cambiarTamañoYColor(elemento) {
+
+        elemento.style.transform = 'scale(1.05)';
+        const colorAleatorio = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+        elemento.style.backgroundColor = colorAleatorio;
+        }
+
+        function restaurarTamañoYColor(elemento) {
+        elemento.style.transform = 'scale(1)';
+        elemento.style.backgroundColor = '';
+        }
+
+        articles.forEach((article) => {
+        article.addEventListener('mouseover', () => {
+            cambiarTamañoYColor(article);
+        });
+        
+        article.addEventListener('mouseout', () => {
+            restaurarTamañoYColor(article);
+        });
+        });
+    </script>
+
 </body>
 
 </html>
