@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autos Locos - Nuestro Equipo</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+        img {
+            transition: transform 0.7s ease-in-out;
+            margin-bottom: 10px;
+        }
+
+        img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-danger text-white text-center p-4">
+        <h1>Autos Locos</h1>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link text-white" href="home.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="about.html">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="ubicacion.html">Ubicación</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="equipo.html">Equipo</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="consecionario.html">Catálogo</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="contacto.html">Atención al cliente</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="container mt-4">
+        <h2 class="text-center">Nuestro Equipo</h2>
+        <p class="text-center">Conoce a los expertos que hacen posible Autos Locos.</p>
+        
+        <section class="row">
+            <article class="col-md-4 text-center">
+                <img src="../resources/jefe.jpeg" class="rounded-circle" width="150" height="150" alt="CEO">
+                <h3>Juan Pérez</h3>
+                <p>CEO y Fundador</p>
+            </article>
+            <article class="col-md-4 text-center">
+                <img src="../resources/maeb.jpeg" class="rounded-circle" width="150" height="150" alt="Gerente de Ventas">
+                <h3>Ana Gómez</h3>
+                <p>Gerente de Ventas</p>
+            </article>
+            <article class="col-md-4 text-center">
+                <img src="../resources/dandy.jpg" class="rounded-circle" width="150" height="150" alt="Atención al Cliente">
+                <h3>Carlos Chacón</h3>
+                <p>Atención al Cliente</p>
+            </article>
+        </section>
+    </main>
+    
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <p>&copy; 2025 Autos Locos. Todos los derechos reservados.</p>
+    </footer>
+
+
+</body>
+</html>
