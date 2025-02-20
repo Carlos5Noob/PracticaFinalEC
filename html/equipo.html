@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,29 +10,98 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
-        html,
-        body {
+        .carrousel-empleados {
+            position: relative;
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        .carrousel-inner {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .carrousel-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
             height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s;
         }
 
-        body {
-            display: flex;
-            flex-direction: column;
+        .carrousel-item.active {
+            opacity: 1;
         }
 
-        main {
-            flex: 1;
-        }
-        img {
-            transition: transform 0.7s ease-in-out;
-            margin-bottom: 10px;
+        .carrousel-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
         }
 
-        img:hover {
-            transform: scale(1.2);
+        .carrousel-item .nombre-empleado {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 10px;
         }
+
+        .carrousel-controls {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .prev,
+        .next {
+            background-color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: #ccc;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .carrousel-item img {
+            object-fit: cover;
+        }
+
+        li:hover {
+            background-color: #333;
+            text-decoration: underline;
+        }
+        .cargo-empleado {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+}
     </style>
 </head>
+
 <body>
     <header class="bg-danger text-white text-center p-4">
         <h1>Autos Locos</h1>
@@ -46,34 +116,74 @@
             </ul>
         </nav>
     </header>
-    
+
     <main class="container mt-4">
-        <h2 class="text-center">Nuestro Equipo</h2>
-        <p class="text-center">Conoce a los expertos que hacen posible Autos Locos.</p>
-        
-        <section class="row">
-            <article class="col-md-4 text-center">
-                <img src="../resources/jefe.jpeg" class="rounded-circle" width="150" height="150" alt="CEO">
-                <h3>Juan Pérez</h3>
-                <p>CEO y Fundador</p>
-            </article>
-            <article class="col-md-4 text-center">
-                <img src="../resources/maeb.jpeg" class="rounded-circle" width="150" height="150" alt="Gerente de Ventas">
-                <h3>Ana Gómez</h3>
-                <p>Gerente de Ventas</p>
-            </article>
-            <article class="col-md-4 text-center">
-                <img src="../resources/dandy.jpg" class="rounded-circle" width="150" height="150" alt="Atención al Cliente">
-                <h3>Carlos Chacón</h3>
-                <p>Atención al Cliente</p>
-            </article>
-        </section>
+        <div class="carrousel-empleados">
+            <div class="carrousel-inner">
+                <div class="carrousel-item active">
+                    <img src="../resources/churuuu.jpeg" alt="Empleado 1">
+                    <h3 class="nombre-empleado">Juan Pérez</h3>
+                    <p class="cargo-empleado">Gerente General</p>
+                </div>
+                <div class="carrousel-item">
+                    <img src="../resources/maeb.jpeg" alt="Empleado 2">
+                    <h3 class="nombre-empleado">María Rodríguez</h3>
+                    <p class="cargo-empleado">Jefa de Ventas</p>
+                </div>
+                <div class="carrousel-item">
+                    <img src="../resources/dandy.jpg" alt="Empleado 3">
+                    <h3 class="nombre-empleado">Carlos "Dandy" Chacón </h3>
+                    <p class="cargo-empleado">Mećanico</p>
+                </div>
+            </div>
+            <div class="carrousel-controls">
+                <button class="prev">Anterior</button>
+                <button class="next">Siguiente</button>
+            </div>
+        </div>
     </main>
-    
+
     <footer class="bg-dark text-white text-center p-3 mt-4">
         <p>&copy; 2025 Autos Locos. Todos los derechos reservados.</p>
     </footer>
 
+    <script>
+        // Selecciona el carrousel y sus elementos
+        const carrousel = document.querySelector('.carrousel-empleados');
+        const carrouselInner = carrousel.querySelector('.carrousel-inner');
+        const carrouselItems = carrouselInner.querySelectorAll('.carrousel-item');
+        const prevButton = carrousel.querySelector('.prev');
+        const nextButton = carrousel.querySelector('.next');
+        const nombreEmpleadoActivo = carrousel.querySelector('#nombre-empleado-activo');
+
+        // Agregamos un evento de clic a los botones de control
+        prevButton.addEventListener('click', () => {
+            // Obtenemos el índice del elemento activo
+            const activeIndex = Array.prototype.indexOf.call(carrouselItems, carrousel.querySelector('.active'));
+
+            // Cambiamos el elemento activo al anterior
+            carrouselItems[activeIndex - 1].classList.add('active');
+            carrouselItems[activeIndex].classList.remove('active');
+
+            // Actualizamos el nombre del empleado
+            const nombreEmpleado = carrouselItems[activeIndex - 1].querySelector('.nombre-empleado').textContent;
+            nombreEmpleadoActivo.textContent = nombreEmpleado;
+        });
+
+        nextButton.addEventListener('click', () => {
+            // Obtenemos el índice del elemento activo
+            const activeIndex = Array.prototype.indexOf.call(carrouselItems, carrousel.querySelector('.active'));
+
+            // Cambiamos el elemento activo al siguiente
+            carrouselItems[activeIndex + 1].classList.add('active');
+            carrouselItems[activeIndex].classList.remove('active');
+
+            // Actualizamos el nombre del empleado
+            const nombreEmpleado = carrouselItems[activeIndex + 1].querySelector('.nombre-empleado').textContent;
+            nombreEmpleadoActivo.textContent = nombreEmpleado;
+        });
+    </script>
 
 </body>
+
 </html>
