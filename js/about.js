@@ -1,5 +1,5 @@
-// Añadir un evento de clic al botón o enlace de YouTube
-document.getElementById("youtube").addEventListener("click", function(){
+ // Añadir un evento de clic al botón o enlace de YouTube
+ document.getElementById("youtube").addEventListener("click", function(){
     // Redirige al usuario a un video específico en YouTube
     window.location.href = "https://www.youtube.com/watch?v=5LlgE_fom6Q"
 })
@@ -18,18 +18,18 @@ document.getElementById("twitter").addEventListener("click", function(){
 
 // Esperar a que todo el contenido del DOM esté cargado antes de ejecutar el código siguiente
 document.addEventListener('DOMContentLoaded', function() {
-    
+
     // Selecciona todas las imágenes dentro de los elementos con clase 'row'
     let socialImages = document.querySelectorAll('.row img');
-    
+
     // Selecciona el primer párrafo dentro de un elemento con id 'parrafo'
     let paragraph = document.querySelector('#parrafo p');
-    
+
     // Función para mostrar un mensaje de bienvenida al usuario
     function showWelcomeMessage() {
         alert('¡Bienvenido a nuestra página About Us!');
     }
-    
+
     // Llama a la función para mostrar el mensaje de bienvenida
     showWelcomeMessage();
 

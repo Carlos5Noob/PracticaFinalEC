@@ -8,17 +8,23 @@
 </head>
 
 <style>
-        .navbar {
-            background-color: #dc3545;
-        }
-        .navbar-brand, .nav-link {
-            color: white !important;
-        }
-
+    /* Estilos para la barra de navegación */
+    .navbar {
+        background-color: #dc3545;
+    }
+    .navbar-brand, .nav-link {
+        color: white !important;
+    }
+    /* Efecto al pasar el cursor sobre los elementos del menú */
+    li:hover {
+        background-color: #333;
+        text-decoration: underline;
+    }
 </style>
 
 <body>
 
+    <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">Contactos</a>
@@ -27,18 +33,23 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="about.html">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="concesionario.html">Vehículos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="home.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="about.html">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="ubicacion.html">Ubicación</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="equipo.html">Equipo</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="concesionario.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="contacto.html">Atención al cliente</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Sección de encabezado -->
     <div class="hero">
         <h1 style="text-align: center; padding-top: 10px;">Contacta con nosotros</h1>
     </div>
 
+    <!-- Sección del formulario de contacto -->
     <div class="container my-5" id="contact">
         <h2 class="text-center text-danger">Contactos</h2>
         <div class="row">
@@ -56,44 +67,48 @@
                         <label for="message" class="form-label">Mensaje</label>
                         <input for="message" class="form-control" id="message">
                     </div>
+                    <!-- Botones para enviar o borrar el formulario -->
                     <button type="button" class="btn btn-primary" id="enviar">Enviar</button>
                     <button type="button" class="btn btn-danger" id="borrar">Borrar</button>
                 </form>
             </div>
-        </div>    
+        </div>
     </div>
 
     <script>
-    const form = document.getElementById('contact-form');
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const messageInput = document.getElementById('message');
-    const enviarButton = document.getElementById('enviar');
-    const borrarButton = document.getElementById('borrar');
+        // Selección de elementos del formulario
+        const form = document.getElementById('contact-form');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+        const enviarButton = document.getElementById('enviar');
+        const borrarButton = document.getElementById('borrar');
 
-    enviarButton.addEventListener('click', () => {
-    const data = {
-        name: nameInput.value,
-        email: emailInput.value,
-        message: messageInput.value
-    };
+        // Evento al hacer clic en "Enviar"
+        enviarButton.addEventListener('click', () => {
+            const data = {
+                name: nameInput.value,
+                email: emailInput.value,
+                message: messageInput.value
+            };
 
-    console.log('Datos enviados:');
-    console.log(data);
+            console.log('Datos enviados:');
+            console.log(data);
 
-    // Simulamos la respuesta del servidor
-    setTimeout(() => {
-        console.log('Respuesta del servidor:');
-        console.log('¡Mensaje enviado con éxito!');
-    }, 2000);
-    });
+            // Simulación de la respuesta del servidor con un retraso de 2 segundos
+            setTimeout(() => {
+                console.log('Respuesta del servidor:');
+                console.log('¡Mensaje enviado con éxito!');
+            }, 2000);
+        });
 
-    borrarButton.addEventListener('click', () => {
-    nameInput.value = '';
-    emailInput.value = '';
-    messageInput.value = '';
-    console.log('Datos borrados');
-    });
+        // Evento al hacer clic en "Borrar"
+        borrarButton.addEventListener('click', () => {
+            nameInput.value = '';
+            emailInput.value = '';
+            messageInput.value = '';
+            console.log('Datos borrados');
+        });
     </script>
 
 </body>

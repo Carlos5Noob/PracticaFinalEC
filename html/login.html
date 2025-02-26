@@ -8,6 +8,7 @@
 </head>
     <title>Login</title>
     <style>
+        /* Estilos generales de la página */
         body {
             font-family: Arial, sans-serif;
             display: flex;
@@ -16,6 +17,7 @@
             height: 100vh;
             background-color: #f4f4f4;
         }
+        /* Contenedor del formulario de inicio de sesión */
         .login-container {
             background: white;
             padding: 20px;
@@ -23,6 +25,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
+        /* Estilos para los campos de entrada */
         input {
             display: block;
             width: 100%;
@@ -31,6 +34,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+        /* Estilos para el botón de inicio de sesión */
         button {
             width: 100%;
             padding: 10px;
@@ -40,46 +44,59 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        /* Mensaje de error oculto por defecto */
         .error {
             color: red;
             display: none;
         }
+        /* Estilos para la imagen del botón de regreso a home */
         img {
             cursor: pointer;
             margin-top: 10px;
             margin-right: 500px;
             margin-left: -40px;
         }
+        /* Efecto al pasar el cursor sobre los elementos de lista */
+        li:hover {
+            background-color: #333;
+            text-decoration: underline;
+        }
     </style>
 
 <body>
+    <!-- Contenedor del formulario de inicio de sesión -->
     <div class="login-container">
         <h2>Iniciar sesión</h2>
         <input type="text" id="usuario" placeholder="Usuario">
         <input type="password" id="contrasena" placeholder="Contraseña">
         <p class="error" id="error-msj">Usuario o contraseña incorrectos</p>
         <button id="login-btn" onclick="login()">Ingresar</button>
+        <!-- Imagen para regresar a la página principal -->
         <img src="../resources/home(1).png" alt="home" width="40" height="40" onclick="VueltaAHome()">
     </div>
 
     <script>
 
+        /* Función para validar el inicio de sesión */
         function login() {
             const username = document.getElementById("usuario").value;
             const password = document.getElementById("contrasena").value;
             const errorMsj = document.getElementById("error-msj");
 
+            // Verifica si el usuario y la contraseña son correctos
             if (username === "usuario" && password === "usuario") {
-                window.location.href = "home.html";
+                window.location.href = "home.html"; // Redirige a la página principal
             } else {
-                errorMsj.style.display = "block";
+                errorMsj.style.display = "block"; // Muestra el mensaje de error
             }
         }
 
+        /* Función para regresar a la página de inicio */
         function VueltaAHome() {
             window.location.href = "home.html";
         }
 
+        /* Evento que permite iniciar sesión al presionar Enter */
         document.addEventListener("keydown", function(event) {
             if (event.key === "Enter") {
                 document.getElementById("login-btn").click();
