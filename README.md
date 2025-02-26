@@ -1,20 +1,26 @@
-# PracticaFinalEC
+# 🚗 Práctica Final EC - Concesionario de Vehículos
 
-## Idea del proyecto
+## 📌 Idea del Proyecto
 
-- Concesionario de diferentes tipos de vehículos
+Desarrollaremos una página web para un concesionario de vehículos, aplicando los conocimientos adquiridos a lo largo del curso.
 
-## Descripción del proyecto
+## 📝 Descripción del Proyecto
 
-- Tenemos pensado hacer la página web de un concesionario con las herramientos que hemos aprendido durante este curso. Cada integrante del grupo realizará 2 páginas sobre (incluyendo el archivo HTML, CSS utilizados y scripts de JavaScript) y, al final del proyecto, se juntará todo el trabajo en una sola página
+Cada integrante del equipo será responsable de la creación de dos páginas web, incluyendo los archivos HTML, CSS y JavaScript correspondientes. Al finalizar, uniremos todo el trabajo en un solo sitio web cohesivo y funcional.
 
-## Herramientas usadas
+## 🛠️ Herramientas Utilizadas
 
- - Lenguajes de programación usados: HTML, CSS (Haremos uso de BootStrap tambień) y JavaScript
- - Entornos de desarrollo utilizados: Visual Studio Code y PyCharm
+- **Lenguajes de Programación**: HTML, CSS (con Bootstrap) y JavaScript.
+- **Entornos de Desarrollo**: Visual Studio Code y PyCharm.
 
-## Integrantes del grupo
+## Divisón del proyecto
+
+- Carlos Chacón: Concesionario y About
+- Álvaro Fernández: Login y Contacto
+- Jonatan García: Home, Equipo y Ubicación
+
+## 👥 Integrantes del Equipo
 
 - Jonatan García Luna
-- Alvaro Fernandez de la Calle
-- Carlos Chacón Atienza 
+- Álvaro Fernández de la Calle
+- Carlos Chacón Atienza

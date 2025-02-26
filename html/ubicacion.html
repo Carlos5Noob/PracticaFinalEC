@@ -2,40 +2,53 @@
 <html lang="es">
 
 <head>
+    <!-- Definición del juego de caracteres como UTF-8 para que soporte caracteres especiales -->
     <meta charset="UTF-8">
+    
+    <!-- Configuración para hacer que la página sea adaptable a dispositivos móviles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título de la página que aparece en la pestaña del navegador -->
     <title>Ubicación</title>
+    
+    <!-- Enlace a Bootstrap 4.5 para el diseño y estilo responsivo -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Scripts de Bootstrap para que los componentes interactivos funcionen -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Enlace al archivo script.js (si tienes personalizaciones adicionales en tu archivo JS) -->
     <script src="../js/script.js"></script>
+    
+    <!-- Estilos CSS personalizados para la página -->
     <style>
-        html,
-        body {
-            height: 100%;
+        html, body {
+            height: 100%; /* La página ocupará todo el alto de la ventana */
         }
 
         body {
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Organiza el contenido en una columna */
         }
 
         main {
-            flex: 1;
+            flex: 1; /* Permite que el contenido principal ocupe el espacio restante */
         }
 
         h3:nth-last-child(n+3) {
-            text-decoration: underline 1.5px;
+            text-decoration: underline 1.5px; /* Subraya los h3 que están en las últimas posiciones */
         }
 
         html {
-            scroll-behavior: smooth;
+            scroll-behavior: smooth; /* Hace que el desplazamiento sea suave */
         }
     </style>
 </head>
 
 <body>
+    <!-- Cabecera de la página -->
     <header class="bg-danger text-white text-center p-4">
         <h1>Autos Locos</h1>
         <nav>
@@ -50,10 +63,10 @@
         </nav>
     </header>
 
+    <!-- Contenido principal de la página -->
     <main class="container mt-4">
         <h2 class="text-center">Nuestra Ubicación</h2>
-        <p class="text-center">Nos encontramos en el corazón de la ciudad, con fácil acceso y estacionamiento gratuito.
-        </p>
+        <p class="text-center">Nos encontramos en el corazón de la ciudad, con fácil acceso y estacionamiento gratuito.</p>
 
         <section class="row">
             <div class="col-md-6">
@@ -64,12 +77,12 @@
             </div>
             <div class="col-md-6">
                 <h3>¿Cómo Llegar?</h3>
-                <p>Estamos ubicados a solo 5 minutos de la Plaza Principal. Si vienes en transporte público, varias
-                    rutas de autobús tienen paradas cerca de nuestra dirección.</p>
+                <p>Estamos ubicados a solo 5 minutos de la Plaza Principal. Si vienes en transporte público, varias rutas de autobús tienen paradas cerca de nuestra dirección.</p>
                 <p>Si prefieres venir en tu vehículo, contamos con estacionamiento gratuito para nuestros clientes.</p>
             </div>
         </section>
 
+        <!-- Sección para mostrar un mapa de ubicación -->
         <section class="row mt-4">
             <div class="col-12">
                 <h3>Mapa de Ubicación</h3>
@@ -80,15 +93,19 @@
         </section>
     </main>
 
+    <!-- Pie de página -->
     <footer class="bg-dark text-white text-center p-3 mt-4">
         <p>&copy; 2025 Autos Locos. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Script de bienvenida y animación de desplazamiento suave -->
     <script>
+        // Al cargar la página, muestra un mensaje de bienvenida
         document.addEventListener("DOMContentLoaded", function () {
             alert("¡Bienvenido a la página de Ubicación de Autos Locos!");
         });
 
+        // Permite desplazarse suavemente a los elementos al hacer clic en los enlaces
         $("a").on('click', function (event) {
             if (this.hash !== "") {
                 event.preventDefault();

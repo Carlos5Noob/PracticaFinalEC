@@ -2,53 +2,75 @@
 <html lang="es">
 
 <head>
+    <!-- Define el conjunto de caracteres como UTF-8, permitiendo caracteres especiales como acentos y ñ -->
     <meta charset="UTF-8">
+    
+    <!-- Hace que el sitio sea responsivo, ajustándose al tamaño de pantalla del dispositivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título de la página que se mostrará en la pestaña del navegador -->
     <title>Autos Locos - Inicio</title>
+    
+    <!-- Enlace a la hoja de estilos CSS de Bootstrap desde un CDN para facilitar el diseño del sitio -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Enlace a los scripts necesarios de jQuery y Bootstrap para la funcionalidad interactiva -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Enlace a tu propio archivo JS -->
     <script src="../js/script.js"></script>
+    
+    <!-- Estilos personalizados -->
     <style>
+        /* Asegura que el contenido del cuerpo y el HTML ocupen el 100% de la altura de la ventana */
         html,
         body {
             height: 100%;
         }
 
+        /* Utiliza Flexbox para organizar el contenido de forma vertical */
         body {
             display: flex;
             flex-direction: column;
         }
 
+        /* El contenido principal ocupa el espacio restante */
         main {
             flex: 1;
         }
-        .h3 :hover{
+
+        /* Estilo para el título en las tarjetas, añadiendo subrayado al pasar el mouse */
+        .h3 :hover {
             text-decoration: underline;
         }
     </style>
 </head>
 
 <body>
+    <!-- Cabecera del sitio con el nombre y el menú de navegación -->
     <header class="bg-danger text-white text-center p-4">
         <h1>Autos Locos</h1>
+        <!-- Menú de navegación con enlaces a otras páginas del sitio -->
         <nav>
             <ul class="nav justify-content-center">
                 <li class="nav-item"><a class="nav-link text-white" href="home.html">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="about.html">Sobre Nosotros</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="ubicacion.html">Ubicación</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="equipo.html">Equipo</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="consecionario.html">Catálogo</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="concesionario.html">Catálogo</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="contacto.html">Atención al cliente</a></li>
             </ul>
         </nav>
     </header>
-    
+
+    <!-- Contenido principal de la página -->
     <main class="container mt-4">
         <h2 class="text-center">Bienvenidos a Autos Locos</h2>
         <p class="text-center">Tu concesionario de confianza con las mejores ofertas y servicios.</p>
-        
+
+        <!-- Sección con tarjetas que enlazan a otras páginas -->
         <section class="row">
             <article class="article col-md-6" data-url="ubicacion.html">
                 <div class="card">
@@ -67,7 +89,8 @@
                 </div>
             </article>
         </section>
-        
+
+        <!-- Sección con más tarjetas -->
         <section class="row mt-4">
             <article class="article col-md-6" data-url="atencion.html">
                 <div class="card">
@@ -87,50 +110,52 @@
             </article>
         </section>
     </main>
-    
+
+    <!-- Pie de página con información de derechos de autor -->
     <footer class="bg-dark text-white text-center p-3 mt-4">
         <p>&copy; 2025 Autos Locos. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Script para navegar al hacer clic en una tarjeta -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             console.log("Página cargada correctamente");
-            
+
             let articles = document.querySelectorAll(".article");
             articles.forEach(article => {
                 article.addEventListener("click", function() {
                     let url = this.getAttribute("data-url");
                     if (url) {
-                        window.location.href = url;
+                        window.location.href = url;  // Redirige al usuario a la URL especificada
                     }
                 });
             });
         });
     </script>
 
+    <!-- Script para cambiar el tamaño y color de las tarjetas al pasar el mouse sobre ellas -->
     <script>
         const articles = document.querySelectorAll('.article');
 
         function cambiarTamañoYColor(elemento) {
-
-        elemento.style.transform = 'scale(1.05)';
-        const colorAleatorio = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-        elemento.style.backgroundColor = colorAleatorio;
+            elemento.style.transform = 'scale(1.05)';  // Aumenta el tamaño de la tarjeta
+            const colorAleatorio = `#${Math.floor(Math.random() * 16777215).toString(16)}`;  // Genera un color aleatorio
+            elemento.style.backgroundColor = colorAleatorio;  // Cambia el color de fondo de la tarjeta
         }
 
         function restaurarTamañoYColor(elemento) {
-        elemento.style.transform = 'scale(1)';
-        elemento.style.backgroundColor = '';
+            elemento.style.transform = 'scale(1)';  // Restaura el tamaño original de la tarjeta
+            elemento.style.backgroundColor = '';  // Restaura el color de fondo original
         }
 
         articles.forEach((article) => {
-        article.addEventListener('mouseover', () => {
-            cambiarTamañoYColor(article);
-        });
-        
-        article.addEventListener('mouseout', () => {
-            restaurarTamañoYColor(article);
-        });
+            article.addEventListener('mouseover', () => {
+                cambiarTamañoYColor(article);  // Cambia el tamaño y color cuando el ratón está sobre la tarjeta
+            });
+
+            article.addEventListener('mouseout', () => {
+                restaurarTamañoYColor(article);  // Restaura el tamaño y color cuando el ratón sale de la tarjeta
+            });
         });
     </script>
 

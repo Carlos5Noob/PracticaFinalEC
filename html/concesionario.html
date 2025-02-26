@@ -1,83 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta etiquetas para establecer el conjunto de caracteres y la vista en dispositivos móviles -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
     <title>Concesionario de Vehículos</title>
+    
+    <!-- Vincula el archivo CSS de Bootstrap para el diseño responsive -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Vincula el archivo JS de Bootstrap que contiene funcionalidades como el menú desplegable -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <style>
-        
+        /* Estilos personalizados */
         body {
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #ffffff;  /* Fondo blanco para toda la página */
+            color: #000000;  /* Color del texto negro */
         }
 
         img {
-            width: 350px !important;
-            margin: auto;
-            height: auto;
+            width: 350px !important;  /* Fuerza el tamaño de las imágenes a 350px */
+            margin: auto;  /* Centra las imágenes */
+            height: auto;  /* Mantiene la proporción de la imagen */
         }
         
+        /* Estilo de la barra de navegación */
         .navbar {
-            background-color: #dc3545;
+            background-color: #dc3545;  /* Color de fondo rojo */
         }
+
         .navbar-brand, .nav-link {
-            color: white !important;
+            color: white !important;  /* Color del texto en blanco para los elementos de la barra de navegación */
         }
+
+        /* Estilo para la sección de bienvenida 'hero' */
         .hero {
-            background: url('https://source.unsplash.com/1600x900/?cars') no-repeat center center;
-            background-size: cover;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            background: url('https://source.unsplash.com/1600x900/?cars') no-repeat center center;  /* Fondo de imagen */
+            background-size: cover;  /* Hace que la imagen cubra toda la sección */
+            height: 400px;  /* Altura de la sección */
+            display: flex;  /* Utiliza flexbox para centrar el contenido */
+            align-items: center;  /* Centra verticalmente el contenido */
+            justify-content: center;  /* Centra horizontalmente el contenido */
+            color: white;  /* Color del texto en blanco */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);  /* Sombra para el texto para mejorar la legibilidad */
         }
+
+        /* Estilo para las tarjetas de los vehículos */
         .card {
-            border: none;
-            transition: transform 0.3s;
+            border: none;  /* Elimina el borde por defecto de las tarjetas */
+            transition: transform 0.3s;  /* Añade transición para el efecto de hover */
         }
+
+        /* Efecto de hover en las tarjetas */
         .card:hover {
-            transform: scale(1.05);
+            transform: scale(1.05);  /* Aumenta ligeramente el tamaño de la tarjeta */
         }
+
+        /* Estilo del pie de página */
         .footer {
-            background-color: #000;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
+            background-color: #000;  /* Fondo negro */
+            color: white;  /* Color de texto blanco */
+            padding: 20px 0;  /* Espaciado en el pie de página */
+            text-align: center;  /* Centra el texto */
         }
-        
     </style>
 </head>
 <body>
-    
+    <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
+            <!-- Enlace de la marca de la página -->
             <a class="navbar-brand" href="home.html">Autos Locos</a>
+            <!-- Botón de menú desplegable en dispositivos pequeños -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Menú de navegación -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="about.html">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="concesionario.html">Vehículos</a></li>
                     <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.html">Iniciar sesión</a></li>
-
                 </ul>
             </div>
         </div>
     </nav>
     
+    <!-- Sección de bienvenida 'hero' -->
     <div class="hero">
         <h1>Encuentra el vehículo de tus sueños</h1>
     </div>
     
+    <!-- Contenedor principal para los vehículos -->
     <div class="container my-5" id="cars">
         <h2 class="text-center text-danger">Nuestros Vehículos</h2>
         <div class="row mt-4">
+            <!-- Tarjeta para cada vehículo -->
             <div class="col-md-4">
                 <div class="card">
                     <img src="../resources/audiR8.png" class="card-img-top" alt="Car">
@@ -88,6 +109,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Más tarjetas de vehículos -->
             <div class="col-md-4">
                 <div class="card">
                     <img src="../resources/veyron.png" class="card-img-top" alt="Car">
@@ -98,6 +120,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Más tarjetas de vehículos -->
             <div class="col-md-4">
                 <div class="card">
                     <img src="../resources/tractor.png" class="card-img-top" alt="Car">
@@ -108,12 +131,13 @@
                     </div>
                 </div>
             </div>
+            <!-- Continúa añadiendo tarjetas de vehículos -->
             <div class="col-md-4">
                 <div class="card">
                     <img src="../resources/motoMarquez.png" class="card-img-top" alt="Car">
                     <div class="card-body">
                         <h5 class="card-title">Modelo 4</h5>
-                        <p class="card-text">Lujo y confort en cada viaje.</p>
+                        <p class="card-text">Potencia máxima.</p>
                         <a href="#" class="btn btn-danger">Ver más</a>
                     </div>
                 </div>
@@ -123,7 +147,7 @@
                     <img src="../resources/motogta5.png" class="card-img-top" alt="Car">
                     <div class="card-body">
                         <h5 class="card-title">Modelo 5</h5>
-                        <p class="card-text">Lujo y confort en cada viaje.</p>
+                        <p class="card-text">Vija como un millonario.</p>
                         <a href="#" class="btn btn-danger">Ver más</a>
                     </div>
                 </div>
@@ -133,7 +157,7 @@
                     <img src="../resources/corvette.png" class="card-img-top" alt="Car">
                     <div class="card-body">
                         <h5 class="card-title">Modelo 6</h5>
-                        <p class="card-text">Lujo y confort en cada viaje.</p>
+                        <p class="card-text">Coche de lujo barato.</p>
                         <a href="#" class="btn btn-danger">Ver más</a>
                     </div>
                 </div>
@@ -143,7 +167,7 @@
                     <img src="../resources/fantastico.png" class="card-img-top" alt="Car">
                     <div class="card-body">
                         <h5 class="card-title">Modelo 7</h5>
-                        <p class="card-text">Lujo y confort en cada viaje.</p>
+                        <p class="card-text">¡Ruge con fuerza!.</p>
                         <a href="#" class="btn btn-danger">Ver más</a>
                     </div>
                 </div>
@@ -153,7 +177,7 @@
                     <img src="../resources/coche95.png" class="card-img-top" alt="Car">
                     <div class="card-body">
                         <h5 class="card-title">Modelo 8</h5>
-                        <p class="card-text">Lujo y confort en cada viaje.</p>
+                        <p class="card-text">Potencia americana.</p>
                         <a href="#" class="btn btn-danger">Ver más</a>
                     </div>
                 </div>
@@ -163,7 +187,7 @@
                     <img src="../resources/batmovil.png" class="card-img-top" alt="Car">
                     <div class="card-body">
                         <h5 class="card-title">Modelo 9</h5>
-                        <p class="card-text">Lujo y confort en cada viaje.</p>
+                        <p class="card-text">El mejor coche de batman   .</p>
                         <a href="#" class="btn btn-danger">Ver más</a>
                     </div>
                 </div>
@@ -171,11 +195,13 @@
         </div>
     </div>
     
+    <!-- Pie de página -->
     <footer class="footer">
         <p>&copy; 2025 Concesionario. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Vincula el archivo JavaScript con las funciones específicas para la página de vehículos -->
     <script src="../js/concesionario.js"></script>
 
 </body>
-</html>   
+</html>

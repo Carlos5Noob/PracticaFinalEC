@@ -1,40 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Define el conjunto de caracteres como UTF-8, permitiendo caracteres especiales como acentos y ñ -->
     <meta charset="UTF-8">
+    
+    <!-- Hace que el sitio sea responsivo, ajustándose al tamaño de pantalla del dispositivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título de la página que se mostrará en la pestaña del navegador -->
     <title>Autos Locos - Nuestro Equipo</title>
+    
+    <!-- Enlace a la hoja de estilos CSS de Bootstrap desde un CDN para facilitar el diseño del sitio -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Enlace a los scripts necesarios de jQuery y Bootstrap para la funcionalidad interactiva -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Estilos personalizados -->
     <style>
+        /* Asegura que el contenido del cuerpo y el HTML ocupen el 100% de la altura de la ventana */
         html,
         body {
             height: 100%;
         }
 
+        /* Utiliza Flexbox para organizar el contenido de forma vertical */
         body {
             display: flex;
             flex-direction: column;
         }
 
+        /* El contenido principal ocupa el espacio restante */
         main {
             flex: 1;
         }
+
+        /* Estilos para las imágenes (efecto de zoom cuando se pasa el ratón por encima) */
         img {
-            transition: transform 0.7s ease-in-out;
+            transition: transform 0.7s ease-in-out; /* Transición suave de la transformación */
             margin-bottom: 10px;
         }
 
+        /* Efecto de ampliación cuando el ratón pasa sobre la imagen */
         img:hover {
-            transform: scale(1.2);
+            transform: scale(1.2); /* Aumenta el tamaño de la imagen al 120% */
         }
     </style>
 </head>
 <body>
+    <!-- Cabecera del sitio con el nombre y el menú de navegación -->
     <header class="bg-danger text-white text-center p-4">
         <h1>Autos Locos</h1>
+        <!-- Menú de navegación con enlaces a otras páginas del sitio -->
         <nav>
             <ul class="nav justify-content-center">
                 <li class="nav-item"><a class="nav-link text-white" href="home.html">Inicio</a></li>
@@ -47,22 +66,30 @@
         </nav>
     </header>
     
+    <!-- Contenido principal de la página -->
     <main class="container mt-4">
         <h2 class="text-center">Nuestro Equipo</h2>
         <p class="text-center">Conoce a los expertos que hacen posible Autos Locos.</p>
         
+        <!-- Sección que contiene las tarjetas de cada miembro del equipo -->
         <section class="row">
+            <!-- Miembro 1: CEO -->
             <article class="col-md-4 text-center">
+                <!-- Imagen del CEO con bordes redondeados (circle) y tamaño 150x150 -->
                 <img src="../resources/jefe.jpeg" class="rounded-circle" width="150" height="150" alt="CEO">
                 <h3>Juan Pérez</h3>
                 <p>CEO y Fundador</p>
             </article>
+            <!-- Miembro 2: Gerente de Ventas -->
             <article class="col-md-4 text-center">
+                <!-- Imagen del Gerente de Ventas -->
                 <img src="../resources/maeb.jpeg" class="rounded-circle" width="150" height="150" alt="Gerente de Ventas">
                 <h3>Ana Gómez</h3>
                 <p>Gerente de Ventas</p>
             </article>
+            <!-- Miembro 3: Atención al Cliente -->
             <article class="col-md-4 text-center">
+                <!-- Imagen de la persona encargada de atención al cliente -->
                 <img src="../resources/dandy.jpg" class="rounded-circle" width="150" height="150" alt="Atención al Cliente">
                 <h3>Carlos Chacón</h3>
                 <p>Atención al Cliente</p>
@@ -70,10 +97,9 @@
         </section>
     </main>
     
+    <!-- Pie de página con información de derechos de autor -->
     <footer class="bg-dark text-white text-center p-3 mt-4">
         <p>&copy; 2025 Autos Locos. Todos los derechos reservados.</p>
     </footer>
-
-
 </body>
 </html>
