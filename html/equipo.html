@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <!-- Define el conjunto de caracteres como UTF-8, permitiendo caracteres especiales como acentos y ñ -->
     <meta charset="UTF-8">
@@ -37,69 +38,171 @@
             flex: 1;
         }
 
-        /* Estilos para las imágenes (efecto de zoom cuando se pasa el ratón por encima) */
-        img {
-            transition: transform 0.7s ease-in-out; /* Transición suave de la transformación */
-            margin-bottom: 10px;
+        .carrousel-empleados {
+            position: relative;
+            width: 80%;
+            margin: 40px auto;
         }
 
-        /* Efecto de ampliación cuando el ratón pasa sobre la imagen */
-        img:hover {
-            transform: scale(1.2); /* Aumenta el tamaño de la imagen al 120% */
+        .carrousel-inner {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .carrousel-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .carrousel-item.active {
+            opacity: 1;
+        }
+
+        .carrousel-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .carrousel-item .nombre-empleado {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 10px;
+        }
+
+        .carrousel-controls {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .prev,
+        .next {
+            background-color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: #ccc;
+        }
+        .container-fluid {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer {
+            margin-top: auto;
         }
     </style>
 </head>
+
 <body>
-    <!-- Cabecera del sitio con el nombre y el menú de navegación -->
-    <header class="bg-danger text-white text-center p-4">
-        <h1>Autos Locos</h1>
-        <!-- Menú de navegación con enlaces a otras páginas del sitio -->
-        <nav>
-            <ul class="nav justify-content-center">
-                <li class="nav-item"><a class="nav-link text-white" href="home.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="about.html">Sobre Nosotros</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="ubicacion.html">Ubicación</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="equipo.html">Equipo</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="concesionario.html">Catálogo</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="contacto.html">Atención al cliente</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container-fluid">
+        <!-- Cabecera del sitio con el nombre y el menú de navegación -->
+        <header class="bg-danger text-white text-center p-4">
+            <h1>Autos Locos</h1>
+            <!-- Menú de navegación con enlaces a otras páginas del sitio -->
+            <nav>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a class="nav-link text-white" href="home.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="about.html">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="ubicacion.html">Ubicación</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="equipo.html">Equipo</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="concesionario.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="contacto.html">Atención al cliente</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-    <!-- Contenido principal de la página -->
-    <main class="container mt-4">
-        <h2 class="text-center">Nuestro Equipo</h2>
-        <p class="text-center">Conoce a los expertos que hacen posible Autos Locos.</p>
+        <!-- Contenido principal de la página -->
+        <main class="container mt-4">
+            <h2 class="text-center">Nuestro Equipo</h2>
+            <p class="text-center">Conoce a los expertos que hacen posible Autos Locos.</p>
 
-        <!-- Sección que contiene las tarjetas de cada miembro del equipo -->
-        <section class="row">
-            <!-- Miembro 1: CEO -->
-            <article class="col-md-4 text-center">
-                <!-- Imagen del CEO con bordes redondeados (circle) y tamaño 150x150 -->
-                <img src="../resources/jefe.jpeg" class="rounded-circle" width="150" height="150" alt="CEO">
-                <h3>Juan Pérez</h3>
-                <p>CEO y Fundador</p>
-            </article>
-            <!-- Miembro 2: Gerente de Ventas -->
-            <article class="col-md-4 text-center">
-                <!-- Imagen del Gerente de Ventas -->
-                <img src="../resources/maeb.jpeg" class="rounded-circle" width="150" height="150" alt="Gerente de Ventas">
-                <h3>Ana Gómez</h3>
-                <p>Gerente de Ventas</p>
-            </article>
-            <!-- Miembro 3: Atención al Cliente -->
-            <article class="col-md-4 text-center">
-                <!-- Imagen de la persona encargada de atención al cliente -->
-                <img src="../resources/dandy.jpg" class="rounded-circle" width="150" height="150" alt="Atención al Cliente">
-                <h3>Carlos Chacón</h3>
-                <p>Atención al Cliente</p>
-            </article>
-        </section>
-    </main>
+            <div class="carrousel-empleados">
+                <div class="carrousel-inner">
+                    <div class="carrousel-item active">
+                        <img src="../resources/jefe.jpeg" alt="Empleado 1">
+                        <h3 class="nombre-empleado">Juan Pérez</h3>
+                        <p class="cargo-empleado">Gerente General</p>
+                    </div>
+                    <div class="carrousel-item">
+                        <img src="../resources/maeb.jpeg" alt="Empleado 2">
+                        <h3 class="nombre-empleado">María Rodríguez</h3>
+                        <p class="cargo-empleado">Jefa de Ventas</p>
+                    </div>
+                    <div class="carrousel-item">
+                        <img src="../resources/dandy.jpg" alt="Empleado 3">
+                        <h3 class="nombre-empleado">Carlos López</h3>
+                        <p class="cargo-empleado">Ingeniero de Sistemas</p>
+                    </div>
+                </div>
+                <div class="carrousel-controls">
+                    <button class="prev">Anterior</button>
+                    <button class="next">Siguiente</button>
+                </div>
+            </div>
+        </main>
+    </div>
 
     <!-- Pie de página con información de derechos de autor -->
     <footer class="bg-dark text-white text-center p-3 mt-4">
         <p>&copy; 2025 Autos Locos. Todos los derechos reservados.</p>
     </footer>
 </body>
+<script>
+    // Selecciona el carrousel y sus elementos
+    const carrousel = document.querySelector('.carrousel-empleados');
+    const carrouselInner = carrousel.querySelector('.carrousel-inner');
+    const carrouselItems = carrouselInner.querySelectorAll('.carrousel-item');
+    const prevButton = carrousel.querySelector('.prev');
+    const nextButton = carrousel.querySelector('.next');
+    const nombreEmpleadoActivo = carrousel.querySelector('#nombre-empleado-activo');
+
+    // Agrega un evento de clic a los botones de control
+    prevButton.addEventListener('click', () => {
+        // Obtiene el índice del elemento activo
+        const activeIndex = Array.prototype.indexOf.call(carrouselItems, carrousel.querySelector('.active'));
+
+        // Cambia el elemento activo al anterior
+        carrouselItems[activeIndex - 1].classList.add('active');
+        carrouselItems[activeIndex].classList.remove('active');
+
+        // Actualiza el nombre del empleado
+        const nombreEmpleado = carrouselItems[activeIndex - 1].querySelector('.nombre-empleado').textContent;
+        nombreEmpleadoActivo.textContent = nombreEmpleado;
+    });
+
+    nextButton.addEventListener('click', () => {
+        // Obtiene el índice del elemento activo
+        const activeIndex = Array.prototype.indexOf.call(carrouselItems, carrousel.querySelector('.active'));
+
+        // Cambia el elemento activo al siguiente
+        carrouselItems[activeIndex + 1].classList.add('active');
+        carrouselItems[activeIndex].classList.remove('active');
+
+        // Actualiza el nombre del empleado
+        const nombreEmpleado = carrouselItems[activeIndex + 1].querySelector('.nombre-empleado').textContent;
+        nombreEmpleadoActivo.textContent = nombreEmpleado;
+    });
+</script>
 </html>
